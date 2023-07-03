@@ -88,7 +88,9 @@ export default async function Home() {
 						}
 						const date = new Date(item.dt_txt);
 						return (
-							<div className="flex flex-col items-center">
+							<div
+								key={index}
+								className="flex flex-col items-center">
 								<span className="font-semibold text-lg">
 									{item.main.temp.toFixed()}°C
 								</span>
@@ -121,7 +123,9 @@ export default async function Home() {
 				{sortedByMidday.map((item, index) => {
 					const date = new Date(item.dt_txt);
 					return (
-						<div className="flex justify-between items-center">
+						<div
+							key={index}
+							className="flex justify-between items-center">
 							<span className="font-semibold text-lg w-1/4">
 								{daysOfWeek[date.getDay()]}, {date.getDate()}{' '}
 								{months[date.getMonth()]}
